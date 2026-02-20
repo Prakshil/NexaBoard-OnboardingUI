@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaBoard — Smart Client Onboarding</title>
+    <meta name="description"
+        content="NexaBoard streamlines your client onboarding with AI-powered workflows. Get started in minutes.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #050810;
+            color: #F0F4FF;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050810;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #3191C4, #6C47FF);
+            border-radius: 4px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .glass-card-strong {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+        }
+
+        .blue-glow {
+            box-shadow: 0 0 28px rgba(49, 145, 196, 0.35), 0 0 8px rgba(49, 145, 196, 0.15);
+        }
+
+        .purple-glow {
+            box-shadow: 0 0 28px rgba(108, 71, 255, 0.35), 0 0 8px rgba(108, 71, 255, 0.15);
+        }
+
+        .gradient-border {
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, #3191C4, #6C47FF);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .shimmer-text {
+            background: linear-gradient(90deg, #3191C4 0%, #A78BFA 40%, #3191C4 80%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .float-anim {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .bg-mesh {
+            background:
+                radial-gradient(ellipse 60% 40% at 20% 30%, rgba(49, 145, 196, 0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 35% at 80% 70%, rgba(108, 71, 255, 0.10) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 30% at 60% 20%, rgba(49, 145, 196, 0.06) 0%, transparent 70%),
+                #050810;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
